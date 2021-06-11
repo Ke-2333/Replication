@@ -5,8 +5,6 @@
 LassoShooting algorithm, version 2, 2021.06.11, added parts about partialling out controls
 
 </br>
-</br>
-</br>
 
 **EminentDomain folder:**
   
@@ -16,8 +14,7 @@ LassoShooting algorithm, version 2, 2021.06.11, added parts about partialling ou
   
   Result.md: summary of the comparsion  
 
-  
-  
+</br>  
 
 **Abortion folder:**
   
