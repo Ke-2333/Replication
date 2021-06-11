@@ -1,9 +1,10 @@
 # Replication
 
-LassoShooting.py: LassoShooting algorithm, version 2, 2021.06.11, added parts about partialling out controls
+**LassoShooting.py:** 
+LassoShooting algorithm, version 2, 2021.06.11, added parts about partialling out controls
 
 
-EminentDomain folder:
+**EminentDomain folder:**
   
   CSExampleData.xlsx: cleaned dataset
   
@@ -12,7 +13,7 @@ EminentDomain folder:
   Result.md: summary of the comparsion
   
 
-Abortion folder:
+**Abortion folder:
   
   levitt_data_cleaned.csv: cleaned dataset; directly exported from stata
   
