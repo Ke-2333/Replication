@@ -2,8 +2,8 @@
 
 **LassoShooting.py:** 
 
-LassoShooting algorithm, version 2, 2021.06.11, added parts about partialling out controls&nbsp  
-&nbsp
+LassoShooting algorithm, version 2, 2021.06.11, added parts about partialling out controls
+</br>
 
 
 **EminentDomain folder:**
