@@ -3,7 +3,7 @@
 **LassoShooting.py:** 
 
 LassoShooting algorithm, version 2, 2021.06.11, added parts about partialling out controls  
-
+&nbsp
 
 
 **EminentDomain folder:**
@@ -13,7 +13,7 @@ LassoShooting algorithm, version 2, 2021.06.11, added parts about partialling ou
   comparison.py: comparison among 'ft', 'sir', and LassoShooting
   
   Result.md: summary of the comparsion  
-  
+&nbsp  
   
   
 
