@@ -143,7 +143,11 @@ murdResult = sm.OLS(df['Dymurd'],X_murd).fit(cov_type='cluster',
 murdResult.summary()
 
 
+1. partial out controls
+2. y multivariable nx2   
+ft twice / once 
 
+sir twice
 
 
 
