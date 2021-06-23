@@ -13,7 +13,7 @@ from scipy import linalg
 from linearmodels.iv import IV2SLS
 
 #import data
-df = pd.read_excel('CSExampleData.xlsx')
+df = pd.read_excel('EminentDomain/CSExampleData.xlsx')
 df = df.iloc[:,0:149]  #drop nControl
 X = np.array(df.iloc[:,2:])  #IVs
 y = np.array(df.iloc[:,1]).reshape(-1,1)  
@@ -34,7 +34,7 @@ result_ft = ivmodel_ft.fit(cov_type = 'robust')  #by default is robust
 print(result_ft.first_stage)
 #second stage
 print(result_ft.summary)
-mse_ft = result_ft.resid_ss/n
+mse_ft = result_ft.resid_ss/result_ft.df_resid
 print(mse_ft)
 
 #method = 'sir'
@@ -49,7 +49,7 @@ result_sir = ivmodel_sir.fit(cov_type = 'robust')  #by default is robust
 print(result_sir.first_stage)
 #second stage
 print(result_sir.summary)
-mse_sir = result_sir.resid_ss/n
+mse_sir = result_sir.resid_ss/result_sir.df_resid
 print(mse_sir)
 
 
@@ -67,5 +67,5 @@ result_pl = ivmodel_pl.fit(cov_type = 'robust')  #by default is robust
 print(result_pl.first_stage)
 #second stage
 print(result_pl.summary)
-mse_pl = result_pl.resid_ss/n
+mse_pl = result_pl.resid_ss/result_pl.df_resid
 print(mse_pl)
