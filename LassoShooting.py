@@ -167,8 +167,22 @@ def RunLasso(y, X, verbose=0, lambda_=0, optTol=0.00001, maxIter=10000, zeroTol=
 
 #partial out controls
 def ols_resid(y, X):
-    model = sm.OLS(y, X)
+    #y: response
+    #X: independent variables 
+    X_cons = sm.add_constant(X)
+    model = sm.OLS(y, X_cons)
     return (model.fit().resid).reshape(-1,1)
+
+def partial_out(mat, controls):
+    resid = ols_resid(mat[:,0], controls)
+    for i in range(1, mat.shape[1]):
+        r = ols_resid(mat[:,i], controls)
+        resid = np.c_[resid,r]
+        
+    return resid
+
+
+    
 
 def LassoShooting(y, X, controls=np.array([]), verbose=0, lambda_=0, optTol=0.00001, maxIter=10000, zeroTol=0.0001, hetero = 1, lasIter=100, UpsTol=0.0001):
 
@@ -176,12 +190,8 @@ def LassoShooting(y, X, controls=np.array([]), verbose=0, lambda_=0, optTol=0.00
         selBeta, index = RunLasso(y, X,verbose, lambda_, optTol, maxIter, zeroTol, hetero , lasIter, UpsTol)
 
     else:
-        controls_cons = sm.add_constant(controls)
-        y_resid = ols_resid(y, controls_cons)
-        X_resid = ols_resid(X[:,0], controls_cons)
-        for i in range(1,X.shape[1]):
-            r = ols_resid(X[:,i], controls_cons)
-            X_resid = np.c_[X_resid,r]
+        y_resid = partial_out(y, controls)
+        X_resid = partial_out(X, controls)
             
         selBeta, index = RunLasso(y_resid,X_resid,verbose, lambda_, optTol, maxIter, zeroTol, hetero , lasIter, UpsTol)
 
